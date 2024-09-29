@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de partidas rankeadas</title>
+</head>
+<body>
+    
+    <p class="text"></p>
+    <script>
+
+
+function determinarNivel(vitorias) {
+    if (vitorias < 10) return "Ferro";
+    if (vitorias >= 10 && vitorias <= 20) return "Bronze";
+    if (vitorias >= 21 && vitorias <= 50) return "Prata";
+    if (vitorias >= 51 && vitorias <= 80) return "Ouro";
+    if (vitorias >= 81 && vitorias <= 90) return "Diamante";
+    if (vitorias >= 91 && vitorias <= 100) return "Lendário";
+    return "Imortal"; 
+}
+
+let vitorias = parseInt(prompt("Digite a quantidade de vitórias do jogador:"));
+let derrotas = parseInt(prompt("Digite a quantidade de derrotas do jogador:"));
+
+let saldoVitorias = vitorias - derrotas;
+
+let nivel = determinarNivel(vitorias);
+
+const text = document.querySelector('.text');
+text.textContent = `O Herói tem de saldo de ${saldoVitorias} e está no nível de ${nivel}.`;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrevendo as classes de um jogo</title>
+</head>
+<body>
+
+    <p class="text"></p>
+
+
+    <script>
+        class Hero{
+            constructor(nome, idade, tipo){
+                this.nome = nome;
+                this.idade = idade;
+                this.tipo = tipo
+            }
+        }
+
+        const nome = prompt("Digite o nome do herói:");
+        const idade = prompt("Digite a idade do herói:");
+        const tipo = prompt("Digite o tipo do herói (guerreiro, mago, monge, ninja):");
+
+        let ataque;
+
+        const newHero = new Hero(nome, idade, tipo);
+
+        if(newHero.tipo === "guerreiro"){
+            ataque = "usou espada";
+        } else if(newHero.tipo === "mago") {
+            ataque = "usou magia";
+        } else if(newHero.tipo === "monge") {
+            ataque = "usou artes marciais";
+        } else if(newHero.tipo === "ninja"){
+            ataque = "usou shuriken"
+        } else {
+            ataque = "não tem um ataque definido"
+        }
+
+    
+        const text = document.querySelector('.text');
+        text.textContent = `O ${newHero.tipo} atacou usando ${ataque}`;
+
+    </script>
+</body>
+</html>
+

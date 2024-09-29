@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de nível de héroi</title>
+</head>
+<body>
+    
+    <p class="text"></p>
+    <script>
+
+    const nome = prompt("Digite o nome do herói:");
+    let xp = parseInt(prompt("Digite a quantidade de experiência (XP) do herói:"));
+
+function determinarNivel(xp) {
+    if (xp < 1000) return "Ferro";
+    if (xp >= 1000 && xp <= 2000) return "Bronze"; 
+    if (xp >= 2001 && xp <= 5000) return "Prata";  
+    if (xp >= 5001 && xp <= 7000) return "Ouro";   
+    if (xp >= 7001 && xp <= 8000) return "Platina"; 
+    if (xp >= 8001 && xp <= 9000) return "Ascendente"; 
+    if (xp >= 9001 && xp <= 10000) return "Imortal"; 
+    return "Radiante"; 
+}
+
+let nivel = determinarNivel(xp);
+
+const text = document.querySelector('.text');
+text.textContent  = `O Herói de nome ${nome} está no nível de ${nivel}.`
+
+    </script>
+</body>
+</html>
